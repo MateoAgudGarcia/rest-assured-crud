@@ -17,13 +17,13 @@ class AppTest {
     @Test
     void postTest() {
         baseURI = String.format("%s/User/", url);
-        given().body(bodyPost()).post().then().statusCode(201).assertThat();
+        given().body(bodyPost()).post().then().statusCode(201).log().all().assertThat();
     }
 
     @Test
     void getTest() {
         baseURI = String.format("%s/User/1", url);
-        when().get().then().statusCode(200).assertThat().
+        when().get().then().statusCode(200).log().all().assertThat().
                 body(KeysSchema.ID.label, Is.is("1")).
                 body(KeysSchema.NAME.label, Is.is("Clifton Mayer")).
                 body(KeysSchema.AVATAR.label, Is.is(
@@ -34,12 +34,12 @@ class AppTest {
     @Test
     void patchTest() {
         baseURI = String.format("%s/User/3", url);
-        given().body(bodyPatch()).patch().then().statusCode(200).assertThat();
+        given().body(bodyPatch()).patch().then().statusCode(200).log().all().assertThat();
     }
 
     @Test
     void putTest() {
         baseURI = String.format("%s/User/4", url);
-        given().body(bodyPost()).put().then().statusCode(200).assertThat();
+        given().body(bodyPost()).put().then().statusCode(200).log().all().assertThat();
     }
 }
