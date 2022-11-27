@@ -7,8 +7,7 @@ import org.hamcrest.core.Is;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
-import static rest.assured.crud.JsonFilled.bodyPatch;
-import static rest.assured.crud.JsonFilled.bodyPost;
+import static rest.assured.crud.JsonFilled.*;
 
 class AppTest {
 
